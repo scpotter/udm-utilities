@@ -2,7 +2,7 @@
 
 ## configuration variables:
 VLAN=5
-IPV4_IP="10.0.5.3"
+IPV4_IP="10.0.5.5"
 IPV4_GW="10.0.5.1/24"
 
 # if you want IPv6 support, generate a ULA, select an IP for the dns server
