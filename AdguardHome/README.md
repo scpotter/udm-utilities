@@ -12,16 +12,23 @@
 
 ## Customization
 
-* Feel free to change [20-dns.conflist](../cni-plugins/20-dns.conflist) to change the IP address of the container.
-* Update [10-dns.sh](../dns-common/on_boot.d/10-dns.sh) with your own values
+* Tip: Create a branch with customizations
+    * Update [20-dns.conflist](../cni-plugins/20-dns.conflist) if you want to use an alternate IP address for the container
+    * Update [10-dns.sh](../dns-common/on_boot.d/10-dns.sh) with your own values
 * If you want IPv6 support use [20-dnsipv6.conflist](../cni-plugins/20-dnsipv6.conflist) and update [10-dns.sh](../dns-common/on_boot.d/10-dns.sh) with the IPv6 addresses. Also, please provide IPv6 servers to podman using --dns arguments.
 
 ## Steps
 
 1. On your controller, make a Corporate network with no DHCP server and give it a VLAN. For this example we are using VLAN 5.
 1. Copy [10-dns.sh](../dns-common/on_boot.d/10-dns.sh) to /mnt/data/on_boot.d and update its values to reflect your environment
+    ```shell script
+    curl -L https://raw.githubusercontent.com/scpotter/udm-utilities/master/dns-common/on_boot.d/10-dns.sh -o /mnt/data/on_boot.d/10-dns.sh
+    ```
 1. Execute /mnt/data/on_boot.d/10-dns.sh
 1. Copy [20-dns.conflist](../cni-plugins/20-dns.conflist) to /mnt/data/podman/cni.  This will create your podman macvlan network
+    ```shell script
+    curl -L https://raw.githubusercontent.com/scpotter/udm-utilities/scpotter-custom-config/cni-plugins/20-dns.conflist -o /mnt/data/podman/cni/20-dns.conflist
+    ```
 1. Run the AdguardHome docker container, be sure to make the directories for your persistent AdguardHome configuration.  They are mounted as volumes in the command below.
 
     ```shell script
@@ -37,6 +44,6 @@
         adguard/adguardhome:latest
     ```
 
-1. Browse to 10.0.5.3:3000 and follow the setup wizard
+1. Browse to 10.0.5.3:3000 (or your custom ip) and follow the setup wizard
 1. Update your DNS Servers to 10.0.5.3 (or your custom ip) in all your DHCP configs.
 1. Access the AdguardHome like you would normally.
