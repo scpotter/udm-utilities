@@ -20,14 +20,15 @@
 
 ## Steps
 
+1. Fork or clone and make Customizations
 1. On your controller, make a Corporate network with no DHCP server and give it a VLAN. For this example we are using VLAN 5.
-1. Copy [10-dns.sh](../dns-common/on_boot.d/10-dns.sh) to /mnt/data/on_boot.d and update its values to reflect your environment
-    ```shell script
+1. Copy customized [10-dns.sh](../dns-common/on_boot.d/10-dns.sh) to /mnt/data/on_boot.d 
+    ```bash
     curl -L https://raw.githubusercontent.com/scpotter/udm-utilities/master/dns-common/on_boot.d/10-dns.sh -o /mnt/data/on_boot.d/10-dns.sh
     ```
 1. Execute /mnt/data/on_boot.d/10-dns.sh
-1. Copy [20-dns.conflist](../cni-plugins/20-dns.conflist) to /mnt/data/podman/cni.  This will create your podman macvlan network
-    ```shell script
+1. Copy customized [20-dns.conflist](../cni-plugins/20-dns.conflist) to /mnt/data/podman/cni.  This will create your podman macvlan network
+    ```bash
     curl -L https://raw.githubusercontent.com/scpotter/udm-utilities/scpotter-custom-config/cni-plugins/20-dns.conflist -o /mnt/data/podman/cni/20-dns.conflist
     ```
 1. Run the AdguardHome docker container, be sure to make the directories for your persistent AdguardHome configuration.  They are mounted as volumes in the command below.
