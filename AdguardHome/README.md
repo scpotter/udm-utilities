@@ -15,6 +15,7 @@
 * Tip: Create a branch with customizations
     * Update [20-dns.conflist](../cni-plugins/20-dns.conflist) if you want to use an alternate IP address for the container
     * Update [10-dns.sh](../dns-common/on_boot.d/10-dns.sh) with your own values
+    * Readme updates as appropriate
 * If you want IPv6 support use [20-dnsipv6.conflist](../cni-plugins/20-dnsipv6.conflist) and update [10-dns.sh](../dns-common/on_boot.d/10-dns.sh) with the IPv6 addresses. Also, please provide IPv6 servers to podman using --dns arguments.
 
 ## Steps
