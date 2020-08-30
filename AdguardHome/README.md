@@ -27,6 +27,9 @@
     curl -L https://raw.githubusercontent.com/scpotter/udm-utilities/master/dns-common/on_boot.d/10-dns.sh -o /mnt/data/on_boot.d/10-dns.sh
     ```
 1. Execute /mnt/data/on_boot.d/10-dns.sh
+    ```bash
+    sh /mnt/data/on_boot.d/10-dns.sh
+    ```
 1. Copy customized [20-dns.conflist](../cni-plugins/20-dns.conflist) to /mnt/data/podman/cni.  This will create your podman macvlan network
     ```bash
     curl -L https://raw.githubusercontent.com/scpotter/udm-utilities/scpotter-custom-config/cni-plugins/20-dns.conflist -o /mnt/data/podman/cni/20-dns.conflist
