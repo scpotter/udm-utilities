@@ -25,7 +25,7 @@ IPV6_GW=""
 FORCED_INTFC=""
 
 # container name; e.g. nextdns, pihole, adguardhome, etc.
-CONTAINER=nextdns
+CONTAINER=AdGuardHome
 
 ## network configuration and startup:
 CNI_PATH=/mnt/data/podman/cni
