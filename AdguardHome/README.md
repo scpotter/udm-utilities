@@ -39,12 +39,16 @@
     ```bash
     curl -L https://raw.githubusercontent.com/scpotter/udm-utilities/scpotter-custom-config/cni-plugins/20-dns.conflist -o /mnt/data/podman/cni/20-dns.conflist
     ```
-1. Run the AdguardHome docker container, be sure to make the directories for your persistent AdguardHome configuration.  They are mounted as volumes in the command below.
+1. Create the directories for your persistent AdguardHome configuration.  They will be mounted as volumes in the podman run command below.
 
     ```shell script
     mkdir /mnt/data/AdguardHome-Confdir
     mkdir /mnt/data/AdguardHome-Workdir
-    
+    ```
+
+1. Run the AdguardHome docker container. The --name adguardhome must match the 10-dns.sh line for container
+
+    ```shell script
     podman run -d --network dns --restart always  \
         --name adguardhome \
         -v "/mnt/data/AdguardHome-Confdir/:/opt/adguardhome/conf/" \
