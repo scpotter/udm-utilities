@@ -49,7 +49,7 @@
         --name adguardhome \
         -v "/mnt/data/AdguardHome-Confdir/:/opt/adguardhome/conf/" \
         -v "/mnt/data/AdguardHome-Workdir/:/opt/adguardhome/work/" \
-        --dns=127.0.0.1 --dns=1.1.1.1 \
+        --dns=127.0.0.1 --dns=9.9.9.9 \
         --hostname adguardhome \
         adguard/adguardhome:latest
     ```
