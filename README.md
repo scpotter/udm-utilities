@@ -7,28 +7,34 @@ A fork of the [great boostchicken/udm-utilities](https://github.com/boostchicken
 This fork is primarily a learning experiment in hands on github use. Open to comments and questions in the form of issues or pull requests, but adding to do new cool stuff to your UDM/P should go the original, not this fork.
 
 ## Core: on-boot-script
-**Do this first!** This is what enables complete customization of your UDM/P and survives through reboots and upgrades.
+**Do this first! Fills the gap that config.gateway.json left behind.**
+
+This is what enables complete customization of your UDM/P and survives through reboots and upgrades.
 
 Enables init.d style scripts to run on every boot of your UDM.
-**Fills the gap that config.gateway.json left behind.**
 
-Includes examples to run on startup:
+Follow this [readme](https://github.com/scpotter/udm-utilities/blob/master/on-boot-script/README.md) for examples to run on startup:
 * wpa-supplicant/eap-proxy
 * ntop-ng
-* Follow this [readme](https://github.com/scpotter/udm-utilities/blob/master/on-boot-script/README.md).
 
 ## General Tools
 
 ### suricata (not used)
+
+[README.md](https://github.com/scpotter/udm-utilities/blob/master/suricata/README.md)
+
 Run an updated version of suricata and apply custom rules
 
 ### python (not needed)
 
+(No docs)
 If you need python3 on your UDM, generally not recommended, can always use it in unifi-os container
 
 ## VPN Servers / Clients
 
 ### wireguard-go (not used)
+
+[README.md](https://github.com/scpotter/udm-utilities/blob/master/wireguard-go/README.md)
 
 Run a Wireguard client/server on your UDM/P.  Utilizes wireguard-go, not linux kernel modules.  The performance will take a hit due to that.
 
@@ -36,18 +42,24 @@ Run a Wireguard client/server on your UDM/P.  Utilizes wireguard-go, not linux k
 Install a DNS server that functions as a network-wide ad and tracker blocker, and which can also securely proxy encrypted DNS requests to an upstream DNS provider. Begin by following the instructions to setup [on-boot-script](https://github.com/scpotter/udm-utilities/tree/master/on-boot-script) and [dns-common](https://github.com/scpotter/udm-utilities/tree/master/dns-common/on_boot.d). Then, follow the guides below to setup either Pi-Hole, NextDNS, or AdGuard Home.
 
 ### dns-common 
+
 Base configuration for DNS server containers, both IPv4 and IPv6.  Utilizes MacVLAN CNI plugins to completely isolate the network stack.
 
 ### run-pihole (not used)
 
+[README.md](https://github.com/scpotter/udm-utilities/blob/master/run-pihole/README.md)
+
 Run pihole on your UDM with podman.
-[Read
 
 ### nextdns (not used)
+
+[README.md](https://github.com/scpotter/udm-utilities/blob/master/nextdns/README.md)
 
 Run NextDNS on your UDM with podman.
 
 ### AdguardHome
+
+[README.md](https://github.com/scpotter/udm-utilities/blob/master/AdguardHome/README.md)
 
 Run AdguardHome on your UDM with podman.
 
