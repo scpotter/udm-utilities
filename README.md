@@ -7,13 +7,13 @@ A fork of the [great boostchicken/udm-utilities](https://github.com/boostchicken
 This fork is primarily a learning experiment in hands on github use. Open to comments and questions in the form of issues or pull requests, but adding to do new cool stuff to your UDM/P should go the original, not this fork.
 
 ## Core: on-boot-script
-**Do this first! Fills the gap that config.gateway.json left behind.**
+**Do this first! [README.md](https://github.com/scpotter/udm-utilities/blob/master/on-boot-script/README.md) Fills the gap that config.gateway.json left behind.**
 
 This is what enables complete customization of your UDM/P and survives through reboots and upgrades.
 
 Enables init.d style scripts to run on every boot of your UDM.
 
-Follow this [readme](https://github.com/scpotter/udm-utilities/blob/master/on-boot-script/README.md) for examples to run on startup:
+For examples follow this [readme](https://github.com/scpotter/udm-utilities/blob/master/on-boot-script/README.md) to run on startup:
 * wpa-supplicant/eap-proxy
 * ntop-ng
 
